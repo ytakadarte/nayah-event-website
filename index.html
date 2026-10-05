@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="NAYAH-EVENT – stilvolle Eventdekoration. NAYAH-Floristik – Blumen, Sträuße und florale Dekorationen." />
+  <title>NAYAH-EVENT | Eventdekoration & Floristik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --cream:#fbf8f3; --ivory:#fffdf9; --ink:#292522; --muted:#736b65;
+      --rose:#caa6a2; --rose-dark:#9f7c78; --line:rgba(41,37,34,.12);
+      --gold:#b79a6c; --wa:#25d366; --wa-dark:#128c7e;
+      --shadow:0 18px 50px rgba(48,36,30,.09); --radius:24px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;overflow-x:hidden}
+    img{max-width:100%;display:block} a{color:inherit}
+    .container{width:min(1180px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:50;background:rgba(251,248,243,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0)}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:700;letter-spacing:.12em;text-decoration:none}
+    .navlinks{display:flex;gap:26px;font-size:14px;font-weight:600}
+    .navlinks a{text-decoration:none;opacity:.82}.navlinks a:hover{opacity:1}
+    .nav-cta{border:1px solid var(--ink);padding:11px 17px;border-radius:999px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap}
+    .hero{padding:54px 0 44px}
+    .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:50px}
+    .eyebrow{letter-spacing:.2em;text-transform:uppercase;font-size:12px;color:var(--rose-dark);font-weight:700;margin-bottom:12px}
+    h1,h2,h3{font-family:"Cormorant Garamond",serif;line-height:.95;margin:0 0 18px}
+    h1{font-size:clamp(48px,8vw,94px);letter-spacing:-.03em}.hero p{font-size:18px;color:var(--muted);max-width:560px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;border:1px solid var(--ink);cursor:pointer;font-family:inherit;line-height:1.2;text-align:center}
+    .btn.primary{background:var(--ink);color:#fff}.btn.ghost{background:transparent}
+    .btn.wa{background:var(--wa);border-color:var(--wa);color:#073b1f;width:100%}
+    .btn.wa:hover{background:#1fbd5b}
+    .btn svg,.wa-float svg{width:20px;height:20px;fill:currentColor;flex:none}
+    .hero-photo{position:relative;border-radius:34px;overflow:hidden;box-shadow:var(--shadow)}
+    .hero-photo img{width:100%;height:560px;object-fit:cover}
+    .hero-label{position:absolute;left:20px;bottom:20px;right:20px;width:fit-content;max-width:calc(100% - 40px);background:rgba(255,253,249,.94);padding:13px 16px;border-radius:16px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    section{padding:82px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}
+    .section-head h2{font-size:clamp(40px,5vw,62px)} .section-head p{max-width:560px;color:var(--muted);margin:0}
+    .brand-card{background:var(--ivory);border:1px solid var(--line);border-radius:var(--radius);padding:32px;box-shadow:0 10px 35px rgba(48,36,30,.04)}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+    .service img{aspect-ratio:4/3;width:100%;object-fit:cover}.service-body{padding:20px}.service h3{font-size:31px;margin:0 0 6px}.service p{margin:0;color:var(--muted);font-size:14px}
+    .config{background:#eee4dd}.config-wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:start}
+    .panel{background:var(--ivory);border:1px solid var(--line);border-radius:var(--radius);padding:26px}.panel h3{font-size:34px}
+    .steps{display:grid;gap:18px}.step{padding-bottom:16px;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0;padding-bottom:0}
+    .step-title{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--rose-dark);margin-bottom:10px}
+    .options{display:flex;flex-wrap:wrap;gap:9px}.option input{position:absolute;opacity:0;pointer-events:none}
+    .option label{display:block;padding:11px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;cursor:pointer;background:#fff}
+    .option input:checked+label{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .option input:focus-visible+label{outline:2px solid var(--rose-dark);outline-offset:2px}
+    .summary{position:sticky;top:98px}.summary-list{display:grid;gap:10px;margin:18px 0 22px}.summary-row{display:flex;justify-content:space-between;gap:16px;font-size:14px;padding-bottom:10px;border-bottom:1px dashed var(--line)}.summary-row span:first-child{color:var(--muted)}.summary-row strong{text-align:right}
+    .note{font-size:12px;color:var(--muted)}
+    .shop{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}.product{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}.product img{aspect-ratio:4/5;width:100%;object-fit:cover}.product-body{padding:20px;display:flex;flex-direction:column;flex:1}.product h3{font-size:30px;margin-bottom:6px}.product p{color:var(--muted);font-size:14px;margin:0 0 16px}.product .price{font-weight:800;margin-bottom:14px;margin-top:auto}
+    .instagram{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px}.ig-card{background:var(--ink);color:#fff;border-radius:var(--radius);padding:34px}.ig-card h2{font-size:clamp(40px,6vw,58px)}.ig-card p{color:rgba(255,255,255,.72)}.ig-handle{font-size:20px;font-weight:800;letter-spacing:.03em}
+    .ig-image{display:block;position:relative;border-radius:var(--radius);overflow:hidden}.ig-image img{width:100%;height:100%;min-height:330px;object-fit:cover}
+    .ig-image span{position:absolute;left:16px;bottom:16px;background:rgba(255,253,249,.94);padding:10px 14px;border-radius:14px;font-size:13px;font-weight:700}
+    .cta-card{text-align:center;padding:48px}.cta-card h2{font-size:clamp(38px,6vw,62px)}.cta-card p{margin:0 auto 24px;max-width:680px;color:var(--muted)}
+    footer{padding:35px 0 calc(35px + env(safe-area-inset-bottom,0));border-top:1px solid var(--line);font-size:13px;color:var(--muted)}.footer-inner{display:flex;justify-content:space-between;gap:12px 20px;flex-wrap:wrap}
+    .wa-float{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:60;display:flex;align-items:center;gap:10px;background:var(--wa);color:#073b1f;text-decoration:none;font-weight:700;font-size:14px;padding:14px 20px 14px 16px;border-radius:999px;box-shadow:0 12px 30px rgba(18,140,126,.4)}
+    .wa-float svg{width:26px;height:26px}.wa-float:hover{background:#1fbd5b}
+    .toast{position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom,0));transform:translate(-50%,12px);background:var(--ink);color:#fff;padding:13px 16px;border-radius:14px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s;z-index:70;font-size:14px;max-width:calc(100% - 32px)}.toast.show{opacity:1;transform:translate(-50%,0)}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--rose-dark);outline-offset:3px}
+    .packages{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;align-items:stretch}
+    .package{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}
+    .package.featured{border-color:var(--gold);box-shadow:var(--shadow)}
+    .package img{aspect-ratio:16/9;width:100%;object-fit:cover}
+    .package-body{padding:22px;display:flex;flex-direction:column;flex:1}
+    .package h3{font-size:34px;margin-bottom:6px}.package .inc{font-size:13px;color:var(--rose-dark);font-weight:600;margin:0 0 14px}
+    .package .pprice{font-family:"Cormorant Garamond",serif;font-size:38px;font-weight:700;color:var(--gold);line-height:1}.package .pprice small{display:block;font-family:Inter,sans-serif;font-size:12px;font-weight:500;color:var(--muted);margin-top:6px}
+    .package ul{margin:16px 0 22px;padding-left:18px;font-size:14px;color:var(--muted)}.package li{margin-bottom:6px}
+    .package .btn{margin-top:auto}
+    .region{text-align:center;color:var(--muted);font-size:13px;margin:22px 0 0}
+    @media(max-width:900px){.hero-grid,.config-wrap,.instagram{grid-template-columns:1fr}.services{grid-template-columns:1fr 1fr}.summary{position:static}.hero-photo img{height:430px}.section-head{flex-direction:column;align-items:flex-start;gap:12px}.hero-grid{gap:32px}}
+    @media(max-width:620px){
+      .navlinks{display:none}.container{width:calc(100% - 28px)}section{padding:54px 0}.services{grid-template-columns:1fr}.hero{padding:28px 0 20px}.hero-photo{border-radius:24px}.hero-photo img{height:340px}
+      .nav{min-height:64px}.brand{font-size:26px}.nav-cta{padding:9px 14px}.hero p{font-size:16px}.hero-actions .btn{flex:1 1 100%}
+      .panel{padding:20px}.brand-card{padding:24px}.cta-card{padding:32px 20px}.ig-card{padding:26px}.ig-image img{min-height:260px}
+      .option label{padding:12px 14px}.footer-inner{flex-direction:column}
+      .wa-float{padding:15px}.wa-float span{display:none}.wa-float svg{width:28px;height:28px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.toast{transition:none}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#start">NAYAH</a>
+    <nav class="navlinks" aria-label="Hauptnavigation">
+      <a href="#event">NAYAH-EVENT</a><a href="#pakete">Pakete</a><a href="#floristik">NAYAH-Floristik</a><a href="#konfigurator">Konfigurator</a><a href="#instagram">Instagram</a>
+    </nav>
+    <a class="nav-cta" href="#konfigurator">Konfigurieren</a>
+  </div>
+</header>
+
+<main id="start">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Eventdesign · Floristik · Genuss</div>
+        <h1>Dein Moment.<br><em>Dein NAYAH.</em></h1>
+        <p>Stilvolle Eventdekoration, florale Details und besondere Genussmomente – von der eleganten Tischdekoration bis zur inszenierten Mocktail-Bar.</p>
+        <div class="hero-actions"><a class="btn primary" href="#konfigurator">Angebot konfigurieren</a><a class="btn ghost" href="#event">Leistungen entdecken</a></div>
+      </div>
+      <div class="hero-photo"><img src="assets/table-deco.jpg" alt="Festlich gedeckte Tafel mit floralem Mittelstück und Kerzen" fetchpriority="high"><div class="hero-label">NAYAH-EVENT · Elegant & individuell</div></div>
+    </div>
+  </section>
+
+  <section id="event">
+    <div class="container">
+      <div class="section-head"><div><div class="eyebrow">01 · NAYAH-EVENT</div><h2>Eventdekoration,<br>die in Erinnerung bleibt.</h2></div><p>Dein Hauptbereich für Hochzeiten, Geburtstage, Verlobungen, Business-Events und besondere Anlässe. Unsere Pakete sind anpassbar und lassen sich passend zu deinem Konzept kombinieren.</p></div>
+      <div class="services">
+        <article class="service"><img src="assets/table-deco.jpg" alt="Tischdekoration mit Blumen, Kerzen und Goldbesteck" loading="lazy"><div class="service-body"><h3>Tischdekoration</h3><p>Florale Mittelstücke, Kerzen, Servietten, Glas- & Tafelsetting und liebevolle Details.</p></div></article>
+        <article class="service"><img src="assets/stage-deco.jpg" alt="Bühnenbild mit weißer Drapierung, Kerzen und Blumen" loading="lazy"><div class="service-body"><h3>Bühnenbilder</h3><p>Backdrop, Drapierung, florale Akzente und ein stimmiger Mittelpunkt für deinen Raum.</p></div></article>
+        <article class="service"><img src="assets/mocktail-bar.jpg" alt="Mocktail-Bar mit bunten Getränken, Früchten und Blumen" loading="lazy"><div class="service-body"><h3>Mocktail-Bar</h3><p>Stylische Getränkestation mit dekorativen Gläsern, Früchten und alkoholfreien Kreationen.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pakete">
+    <div class="container">
+      <div class="section-head"><div><div class="eyebrow">02 · PAKETE</div><h2>Unsere Pakete<br>für 80 Personen.</h2></div><p>Drei fertige Pakete für Hochzeiten und größere Feiern – Farben, Designs und Details passen wir an dein Konzept an. Alle Preise zuzüglich Fahrtkosten.</p></div>
+      <div class="packages">
+        <article class="package"><img src="assets/paket-basis.jpg" alt="Basis Paket: Hochzeitsbühne in Rot mit gedeckter Tafel" loading="lazy"><div class="package-body"><h3>Basis Paket</h3><p class="inc">Bühne · Tischdekoration · Besteck · Kunstblumen</p><div class="pprice">1.970 €<small>für 80 Personen, zzgl. Fahrtkosten</small></div>
+          <ul><li>Hochzeitsbühne und Brauttisch in wählbaren Farben und Designs, inkl. Aufbau, Abbau und Betreuung</li><li>Stuhlhussen</li><li>Tischdekoration & Floristik mit hochwertigen Kunstblumen</li><li>Passende Tischdecken und Servietten</li><li>Edle LED-Kerzen und Kerzenhalter</li><li>Gedeck nach Wunsch: Teller, Platzteller, Besteck, Gläser</li></ul>
+          <button class="btn primary pick" data-pkg="pkg-basis">Im Konfigurator wählen</button></div></article>
+        <article class="package"><img src="assets/paket-premium.jpg" alt="Premium Paket: Mocktail-Bar und Hochzeitsbühne" loading="lazy"><div class="package-body"><h3>Premium Paket</h3><p class="inc">Mocktailbar · Bühne · Tischdekoration · Besteck · Kunstblumen</p><div class="pprice">2.399 €<small>für 80 Personen, zzgl. Fahrtkosten</small></div>
+          <ul><li><strong>Alles aus dem Basis Paket</strong></li><li>80 Mocktails in 3 Sorten – 2 frei wählbar, 1 mit individuellem Wunschrezept</li><li>Professioneller Aufsteller für die Mocktail-Bar</li><li>Dekorative Acrylboxen zur Präsentation</li><li>Wein- oder Cocktailgläser nach Wunsch</li><li>Individuelle Dekoration mit Kunstblumen</li></ul>
+          <button class="btn primary pick" data-pkg="pkg-premium">Im Konfigurator wählen</button></div></article>
+        <article class="package featured"><img src="assets/paket-deluxe.jpg" alt="Deluxe Flower Paket: Echtblumen, Mocktail-Bar und Bühne" loading="lazy"><div class="package-body"><h3>Deluxe Flower Paket</h3><p class="inc">Brautstrauß · Echtblumendekoration · Mocktailbar · Bühne · Tischdekoration · Besteck</p><div class="pprice">2.979 €<small>für 80 Personen, zzgl. Fahrtkosten</small></div>
+          <ul><li><strong>Alles aus dem Premium Paket</strong></li><li>Individuell konfigurierbarer, handgebundener Brautstrauß</li><li>Echtblumen frei wählbar nach Wunsch</li><li>Blumen- und Farbkonzepte individuell kombinierbar</li><li>Gestaltung passend zu Hochzeitsstil, Farbkonzept und deinen Vorstellungen</li></ul>
+          <button class="btn primary pick" data-pkg="pkg-deluxe">Im Konfigurator wählen</button></div></article>
+      </div>
+      <p class="region">Rhein/Main-Gebiet · Frankfurt · Wiesbaden · Mainz</p>
+    </div>
+  </section>
+
+  <section id="floristik">
+    <div class="container">
+      <div class="section-head"><div><div class="eyebrow">03 · NAYAH-FLORISTIK</div><h2>Blumen für<br>deinen Anlass.</h2></div><p>Blumensträuße, Brautsträuße und florale Dekorationen zum Bestellen. Die Auswahl kann je nach Saison, Farbkonzept und gewünschtem Stil angepasst werden.</p></div>
+      <div class="shop">
+        <article class="product"><img src="assets/brautstrauss.jpg" alt="Brautstrauß mit Rosen, Gerbera und Seidenband" loading="lazy"><div class="product-body"><h3>Brautstrauß</h3><p>Handgebundener Brautstrauß mit frei wählbaren Echtblumen und Farbwelt.</p><div class="price">Auf Anfrage</div><button class="btn primary add" data-name="Brautstrauß">Auswählen</button></div></article>
+        <article class="product"><img src="assets/tischdeko-blumen.jpg" alt="Florale Tischdeko mit Rittersporn, Rosen und Gerbera" loading="lazy"><div class="product-body"><h3>Florale Tischdeko</h3><p>Arrangements passend zu Farbwelt, Anlass und Tischkonzept.</p><div class="price">Auf Anfrage</div><button class="btn primary add" data-name="Florale Tischdeko">Auswählen</button></div></article>
+        <article class="product"><img src="assets/blumenstrauss.jpg" alt="Blumenstrauß mit Rosen, Gerbera und Lisianthus" loading="lazy"><div class="product-body"><h3>Blumenstrauß</h3><p>Eleganter Strauß für Zuhause, Geschenk oder Empfang – saisonal zusammengestellt.</p><div class="price">Auf Anfrage</div><button class="btn primary add" data-name="Blumenstrauß">Auswählen</button></div></article>
+        <article class="product"><img src="assets/blumentasche.jpg" alt="Blumentasche mit Rosen, Rittersporn und Calla" loading="lazy"><div class="product-body"><h3>Blumentasche</h3><p>Frisch arrangierte Blumen in der Tasche – ein Geschenk oder Blickfang zum Mitnehmen.</p><div class="price">Auf Anfrage</div><button class="btn primary add" data-name="Blumentasche">Auswählen</button></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="konfigurator" class="config">
+    <div class="container">
+      <div class="section-head"><div><div class="eyebrow">04 · KONFIGURATOR</div><h2>Dein Event.<br>Schritt für Schritt.</h2></div><p>Stelle dir einen Überblick aus Paket, Leistungen und Farbschema zusammen. Das Ergebnis sendest du anschließend als unverbindliche Anfrage direkt per WhatsApp.</p></div>
+      <div class="config-wrap">
+        <div class="panel steps">
+          <div class="step"><div class="step-title">1 · Anlass</div><div class="options">
+            <div class="option"><input type="radio" name="event" id="wedding" value="Hochzeit" checked><label for="wedding">Hochzeit</label></div>
+            <div class="option"><input type="radio" name="event" id="birthday" value="Geburtstag"><label for="birthday">Geburtstag</label></div>
+            <div class="option"><input type="radio" name="event" id="engagement" value="Verlobung"><label for="engagement">Verlobung</label></div>
+            <div class="option"><input type="radio" name="event" id="business" value="Business Event"><label for="business">Business Event</label></div>
+          </div></div>
+          <div class="step"><div class="step-title">2 · Paket (optional)</div><div class="options">
+            <div class="option"><input type="radio" name="pkg" id="pkg-none" value="Individuell (ohne Paket)" checked><label for="pkg-none">Individuell</label></div>
+            <div class="option"><input type="radio" name="pkg" id="pkg-basis" value="Basis Paket (80 Pers., 1.970 €)"><label for="pkg-basis">Basis · 1.970 €</label></div>
+            <div class="option"><input type="radio" name="pkg" id="pkg-premium" value="Premium Paket (80 Pers., 2.399 €)"><label for="pkg-premium">Premium · 2.399 €</label></div>
+            <div class="option"><input type="radio" name="pkg" id="pkg-deluxe" value="Deluxe Flower Paket (80 Pers., 2.979 €)"><label for="pkg-deluxe">Deluxe Flower · 2.979 €</label></div>
+          </div></div>
+          <div class="step"><div class="step-title">3 · Leistungen</div><div class="options">
+            <div class="option"><input type="checkbox" id="table" value="Tischdekoration"><label for="table">Tischdekoration</label></div>
+            <div class="option"><input type="checkbox" id="stage" value="Bühnenbild"><label for="stage">Bühnenbild</label></div>
+            <div class="option"><input type="checkbox" id="mocktail" value="Mocktail-Bar"><label for="mocktail">Mocktail-Bar</label></div>
+            <div class="option"><input type="checkbox" id="floral" value="Florale Dekoration"><label for="floral">Florale Dekoration</label></div>
+          </div></div>
+          <div class="step"><div class="step-title">4 · Farbschema</div><div class="options">
+            <div class="option"><input type="radio" name="colors" id="white" value="Weiß, Creme" checked><label for="white">Weiß, Creme</label></div>
+            <div class="option"><input type="radio" name="colors" id="redpastel" value="Rot, Pastel-Mix"><label for="redpastel">Rot, Pastel-Mix</label></div>
+            <div class="option"><input type="radio" name="colors" id="custom" value="Weitere Farbwelt"><label for="custom">Weitere Farbwelt</label></div>
+          </div></div>
+        </div>
+        <aside class="panel summary"><div class="step-title">Deine Auswahl</div><h3>NAYAH-Konzept</h3><div id="summaryList" class="summary-list"></div><p class="note">Paketpreise zzgl. Fahrtkosten. Inhalte und Details stimmen wir nach deiner Anfrage individuell ab.</p>
+          <a id="waBtn" class="btn wa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.07c-.25.69-1.43 1.32-1.97 1.37-.5.05-.97.23-3.27-.68-2.77-1.1-4.53-3.93-4.67-4.11-.13-.18-1.1-1.47-1.1-2.8 0-1.32.7-1.97.94-2.24.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.6.46.25.6.84 2.06.91 2.2.07.15.12.32.02.5-.1.2-.15.32-.3.5-.15.17-.31.38-.44.5-.15.15-.3.3-.13.6.17.3.77 1.27 1.65 2.05 1.13 1 2.09 1.32 2.39 1.47.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.72-.18 1.4Z"/></svg>Anfrage per WhatsApp senden</a></aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="instagram">
+    <div class="container instagram">
+      <div class="ig-card"><div class="eyebrow" style="color:#d8beb9">05 · INSTAGRAM</div><h2>NAYAH auf Instagram.</h2><p>Inspiration, echte Setups, Blumen, Dekorationen und Einblicke hinter die Kulissen.</p><div class="ig-handle">@nayah.event</div><div style="margin-top:22px"><a class="btn" style="background:#fff;color:var(--ink);border-color:#fff" href="https://www.instagram.com/nayah.event/" target="_blank" rel="noopener">Instagram öffnen ↗</a></div></div>
+      <a class="ig-image" href="https://www.instagram.com/nayah.event/" target="_blank" rel="noopener" aria-label="NAYAH-EVENT auf Instagram öffnen"><img src="assets/cocktailbar.jpg" alt="Mocktail-Bar mit Instagram-QR-Code von @nayah.event" loading="lazy"><span>@nayah.event ↗</span></a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="brand-card cta-card">
+        <div class="eyebrow">NAYAH-EVENT.de</div><h2>Bereit für dein Konzept?</h2><p>Wähle im Konfigurator deine Wünsche aus und sende uns deine Anfrage per WhatsApp. Pakete sind anpassbar und können aufeinander abgestimmt werden.</p><a class="btn primary" href="#konfigurator">Jetzt konfigurieren</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="container footer-inner"><div>© 2026 NAYAH-EVENT · NAYAH-Floristik</div><div><a href="https://www.instagram.com/nayah.event/" target="_blank" rel="noopener">Instagram @nayah.event</a> · <a href="mailto:nayah.kontakt@gmail.com">nayah.kontakt@gmail.com</a></div></div></footer>
+
+<a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="Per WhatsApp Business schreiben"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.95L2 22l5.2-1.5A9.9 9.9 0 1 0 12.04 2Zm5.8 14.07c-.25.69-1.43 1.32-1.97 1.37-.5.05-.97.23-3.27-.68-2.77-1.1-4.53-3.93-4.67-4.11-.13-.18-1.1-1.47-1.1-2.8 0-1.32.7-1.97.94-2.24.25-.27.54-.34.72-.34h.52c.17 0 .39-.06.6.46.25.6.84 2.06.91 2.2.07.15.12.32.02.5-.1.2-.15.32-.3.5-.15.17-.31.38-.44.5-.15.15-.3.3-.13.6.17.3.77 1.27 1.65 2.05 1.13 1 2.09 1.32 2.39 1.47.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.35.07.12.07.72-.18 1.4Z"/></svg><span>WhatsApp Business</span></a>
+<div class="toast" id="toast" role="status">Auswahl übernommen.</div>
+
+<script>
+  /* WhatsApp-Business-Link von NAYAH-EVENT */
+  const WA_LINK = "https://api.whatsapp.com/message/AMOUN5T3BLMAL1?autoload=1&app_absent=0";
+
+  const get = s => document.querySelector(s);
+  const all = s => [...document.querySelectorAll(s)];
+  const summary = get('#summaryList'), waBtn = get('#waBtn'), waFloat = get('#waFloat'), toast = get('#toast');
+  const waUrl = text => `${WA_LINK}&text=${encodeURIComponent(text)}`;
+  const valueOf = name => document.querySelector(`input[name="${name}"]:checked`)?.value || '—';
+  const services = () => all('#konfigurator input[type="checkbox"]:checked').map(x => x.value);
+  const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const showToast = t => { toast.textContent = t; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2600); };
+
+  /* Was in welchem Paket enthalten ist (IDs der Leistungen) */
+  const PKG = {
+    'pkg-basis':   ['stage','table'],
+    'pkg-premium': ['stage','table','mocktail'],
+    'pkg-deluxe':  ['stage','table','mocktail','floral']
+  };
+
+  let message = '';
+  function render(){
+    const list = services();
+    const data = [
+      ['Anlass', valueOf('event')],
+      ['Paket', valueOf('pkg')],
+      ['Leistungen', list.length ? list.join(', ') : 'Noch nichts gewählt'],
+      ['Farbschema', valueOf('colors')]
+    ];
+    summary.innerHTML = data.map(([a,b]) => `<div class="summary-row"><span>${a}</span><strong>${esc(b)}</strong></div>`).join('');
+    message = [
+      'Hallo NAYAH-EVENT,', '',
+      'ich interessiere mich für folgende Konfiguration:', '',
+      `*Anlass:* ${valueOf('event')}`,
+      `*Paket:* ${valueOf('pkg')}`,
+      `*Leistungen:* ${list.join(', ') || 'Noch offen'}`,
+      `*Farbschema:* ${valueOf('colors')}`, '',
+      'Bitte sendet mir weitere Informationen und ein Angebot.'
+    ].join('\n');
+    waBtn.href = waUrl(message);
+  }
+
+  all('#konfigurator input').forEach(x => x.addEventListener('change', render));
+  all('input[name="pkg"]').forEach(r => r.addEventListener('change', () => {
+    const ids = PKG[r.id];
+    if (ids) all('#konfigurator input[type="checkbox"]').forEach(c => c.checked = ids.includes(c.id));
+    render();
+  }));
+  render();
+
+  /* Zur Sicherheit: Nachricht in die Zwischenablage, falls WhatsApp den Text nicht vorausfüllt */
+  waBtn.addEventListener('click', () => { navigator.clipboard?.writeText(message).then(() => showToast('Nachricht kopiert – falls das Feld in WhatsApp leer ist, einfach einfügen.')).catch(() => {}); });
+  waFloat.href = waUrl('Hallo NAYAH-EVENT, ich habe eine Frage zu euren Dekorationen und Blumen.');
+
+  const map = { 'Brautstrauß':['floral'], 'Blumenstrauß':['floral'], 'Blumentasche':['floral'], 'Florale Tischdeko':['table','floral'] };
+  all('.add').forEach(btn => btn.addEventListener('click', () => {
+    (map[btn.dataset.name] || []).forEach(id => get('#' + id).checked = true);
+    get('#pkg-none').checked = true;
+    render();
+    get('#konfigurator').scrollIntoView({behavior:'smooth'});
+    showToast(`${btn.dataset.name} zur Auswahl hinzugefügt.`);
+  }));
+  all('.pick').forEach(btn => btn.addEventListener('click', () => {
+    const r = get('#' + btn.dataset.pkg); r.checked = true; r.dispatchEvent(new Event('change', {bubbles:true}));
+    get('#konfigurator').scrollIntoView({behavior:'smooth'});
+    showToast('Paket zur Auswahl hinzugefügt.');
+  }));
+</script>
+</body>
+</html>
