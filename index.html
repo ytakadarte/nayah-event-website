@@ -1,47 +1,183 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nayah Event – Hochzeitsdeko, Mocktailbars & Dekoverleih im Rhein-Main-Gebiet</title>
-<meta name="description" content="Hochzeitsdekoration, Mocktailbars und Dekoverleih rund um Frankfurt, Wiesbaden und Mainz.">
-<style>
-  :root { --blush:#f6dde4; --plum:#3a1f33; --rose:#b0436a; --paper:#fff9fa; }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--paper); color:var(--plum); font:18px/1.6 system-ui, sans-serif; }
-  header { background:var(--blush); padding:72px 24px 64px; text-align:center; }
-  h1 { font:400 clamp(2.2rem,6vw,3.8rem)/1.1 Georgia, 'Times New Roman', serif; margin:0 auto 16px; max-width:18ch; }
-  header p { max-width:52ch; margin:0 auto 28px; }
-  .btn { display:inline-block; background:var(--rose); color:#fff; padding:14px 28px; border-radius:999px; text-decoration:none; font-weight:600; }
-  .btn:focus-visible { outline:3px solid var(--plum); outline-offset:3px; }
-  main { max-width:900px; margin:0 auto; padding:56px 24px; }
-  h2 { font:400 1.8rem Georgia, serif; margin:0 0 20px; }
-  ul { padding:0; list-style:none; display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
-  li { background:var(--blush); padding:22px; border-radius:18px; }
-  li strong { display:block; font:400 1.3rem Georgia, serif; margin-bottom:6px; }
-  .soon { margin-top:40px; padding:22px; border:2px dashed var(--rose); border-radius:18px; }
-  footer { text-align:center; padding:32px 24px; font-size:.9rem; opacity:.75; }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="NAYAH-EVENT – stilvolle Eventdekoration. NAYAH-Floristik – Blumen, Sträuße und florale Dekorationen." />
+  <title>NAYAH-EVENT | Eventdekoration & Floristik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --white:#ffffff; --ivory:#fdfcf9; --ink:#0b0b0b; --muted:#66615a;
+      --gold:#c9a24a; --gold-dark:#9c7628; --gold-soft:#ead9a8;
+      --line:rgba(11,11,11,.12); --shadow:0 18px 50px rgba(0,0,0,.10); --radius:24px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+    img{max-width:100%;display:block} a{color:inherit}
+    .container{width:min(1180px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,11,11,.96);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,162,74,.32)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-family:"Cormorant Garamond",serif;font-size:31px;font-weight:700;letter-spacing:.18em;text-decoration:none;color:var(--white);position:relative}.brand:after{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin:0 0 3px 7px}
+    .navlinks{display:flex;gap:26px;font-size:14px;font-weight:600}.navlinks a{color:#fff}
+    .navlinks a{text-decoration:none;opacity:.82;transition:.2s}.navlinks a:hover{opacity:1;color:var(--gold)}
+    .nav-cta{border:1px solid var(--gold);padding:11px 17px;border-radius:999px;text-decoration:none;font-size:13px;font-weight:700;color:var(--gold);transition:.2s}.nav-cta:hover{background:var(--gold);color:var(--ink)}
+    .hero{padding:54px 0 44px}
+    .hero-grid{display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:50px}
+    .eyebrow{letter-spacing:.22em;text-transform:uppercase;font-size:12px;color:var(--gold-dark);font-weight:800;margin-bottom:12px}
+    h1,h2,h3{font-family:"Cormorant Garamond",serif;line-height:.95;margin:0 0 18px;color:var(--ink)}
+    h1{font-size:clamp(56px,8vw,94px);letter-spacing:-.03em}.hero h1 em{font-style:normal;color:var(--gold-dark)}.hero p{font-size:18px;color:var(--muted);max-width:560px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;border-radius:999px;text-decoration:none;font-weight:700;font-size:14px;border:1px solid var(--ink);cursor:pointer;transition:.2s}.btn:hover{transform:translateY(-1px)}
+    .btn.primary{background:var(--ink);color:white}.btn.primary:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}.btn.ghost{background:transparent;color:var(--ink)}.btn.ghost:hover{border-color:var(--gold);color:var(--gold-dark)}
+    .hero-photo{position:relative;border-radius:34px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(201,162,74,.48)}
+    .hero-photo img{width:100%;height:560px;object-fit:cover}
+    .hero-label{position:absolute;left:20px;bottom:20px;background:rgba(11,11,11,.88);color:#fff;padding:13px 16px;border-radius:16px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(201,162,74,.55)}
+    section{padding:82px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:34px}
+    .section-head h2{font-size:clamp(42px,5vw,62px)} .section-head p{max-width:560px;color:var(--muted);margin:0}
+    .duo{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+    .brand-card{background:var(--white);border:1px solid rgba(11,11,11,.12);border-radius:var(--radius);padding:32px;box-shadow:0 10px 35px rgba(0,0,0,.05);position:relative}.brand-card:before{content:"";display:block;width:52px;height:2px;background:var(--gold);margin-bottom:18px}
+    .brand-card .tag{font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:700;color:var(--gold-dark)}
+    .brand-card h3{font-size:42px;margin-top:10px}.brand-card p{color:var(--muted)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}.chip{padding:8px 11px;border:1px solid var(--line);border-radius:999px;font-size:12px}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.service{background:var(--white);border-radius:20px;overflow:hidden;border:1px solid var(--line);transition:.25s}.service:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(201,162,74,.42)}
+    .service img{height:250px;width:100%;object-fit:cover}.service-body{padding:20px}.service h3{font-size:31px;margin:0 0 6px}.service p{margin:0;color:var(--muted);font-size:14px}
+    .config{background:#0b0b0b;color:#fff}.config h2,.config h3{color:#fff}.config .section-head p,.config .note{color:rgba(255,255,255,.68)}.config-wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:22px;align-items:start}
+    .panel{background:var(--white);border:1px solid rgba(201,162,74,.28);border-radius:var(--radius);padding:26px;color:var(--ink)}.panel h3{font-size:34px}
+    .steps{display:grid;gap:18px}.step{padding-bottom:16px;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}
+    .step-title{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--gold-dark);margin-bottom:10px}
+    .options{display:flex;flex-wrap:wrap;gap:9px}.option input{display:none}.option label{display:block;padding:11px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;cursor:pointer;background:white;transition:.2s}.option label:hover{border-color:var(--gold)}.option input:checked+label{background:var(--ink);color:#fff;border-color:var(--gold)}
+    .summary{position:sticky;top:98px}.summary-list{display:grid;gap:10px;margin:18px 0 22px}.summary-row{display:flex;justify-content:space-between;gap:16px;font-size:14px;padding-bottom:10px;border-bottom:1px dashed var(--line)}.summary-row span:first-child{color:var(--muted)}
+    .note{font-size:12px;color:var(--muted)}
+    .shop{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.product{background:var(--white);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.25s}.product:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(201,162,74,.42)}.product img{height:245px;width:100%;object-fit:cover}.product-body{padding:20px}.product h3{font-size:30px;margin-bottom:6px}.product p{color:var(--muted);font-size:14px;margin:0 0 16px}.product .price{font-weight:800;margin-bottom:14px}
+    .instagram{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px}.ig-card{background:var(--ink);color:white;border-radius:var(--radius);padding:34px;border:1px solid rgba(201,162,74,.38)}.ig-card h2{font-size:58px;color:#fff}.ig-card p{color:rgba(255,255,255,.72)}.ig-handle{font-size:20px;font-weight:800;letter-spacing:.03em}.ig-image{border-radius:var(--radius);overflow:hidden}.ig-image img{width:100%;height:100%;min-height:330px;object-fit:cover}
+    footer{padding:35px 0;border-top:1px solid var(--line);font-size:13px;color:rgba(255,255,255,.62);background:#0b0b0b}footer a{color:#fff;text-decoration:none}footer a:hover{color:var(--gold)}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .toast{position:fixed;right:20px;bottom:20px;background:var(--gold);color:var(--ink);padding:13px 16px;border-radius:14px;box-shadow:var(--shadow);opacity:0;transform:translateY(12px);pointer-events:none;transition:.25s}.toast.show{opacity:1;transform:none}
+    @media(max-width:900px){.hero-grid,.config-wrap,.instagram{grid-template-columns:1fr}.services,.shop,.duo{grid-template-columns:1fr 1fr}.summary{position:static}.hero-photo img{height:430px}}
+    @media(max-width:620px){.navlinks{display:none}.container{width:min(100% - 24px,1180px)}section{padding:58px 0}.services,.shop,.duo{grid-template-columns:1fr}.hero{padding-top:28px}.hero-photo img{height:360px}.nav{height:68px}.brand{font-size:27px}.nav-cta{padding:9px 13px}}
+  </style>
 </head>
 <body>
 <header>
-  <h1>Dekoration, die eure Hochzeit erzählt</h1>
-  <p>Hochzeitsdeko, Mocktailbars und Dekoverleih im Rhein-Main-Gebiet – rund um Frankfurt, Wiesbaden und Mainz.</p>
-  <!-- WICHTIG: 49XXXXXXXXXX durch deine WhatsApp-Nummer ersetzen (mit 49, ohne 0 und ohne +) -->
-  <a class="btn" href="https://wa.me/49XXXXXXXXXX">Per WhatsApp anfragen</a>
-</header>
-<main>
-  <h2>Was wir für euch machen</h2>
-  <ul>
-    <li><strong>Hochzeitsdeko</strong>Komplette Dekoration nach eurem Motto, von der Trauung bis zur Feier.</li>
-    <li><strong>Mocktailbars</strong>Alkoholfreie Cocktails, schön inszeniert für eure Gäste.</li>
-    <li><strong>Dekoverleih</strong>Dekoartikel zum Mieten, passend für Hochzeiten und andere Feiern.</li>
-  </ul>
-  <div class="soon">
-    <strong>Der Deko-Konfigurator kommt bald.</strong>
-    Dort könnt ihr alle Dekoartikel mit Bildern ansehen und euch euer Wunschpaket zusammenstellen.
+  <div class="container nav">
+    <a class="brand" href="#start">NAYAH</a>
+    <nav class="navlinks" aria-label="Hauptnavigation">
+      <a href="#event">NAYAH-EVENT</a><a href="#floristik">NAYAH-Floristik</a><a href="#konfigurator">Konfigurator</a><a href="#instagram">Instagram</a>
+    </nav>
+    <a class="nav-cta" href="#konfigurator">Konfigurieren</a>
   </div>
+</header>
+
+<main id="start">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Eventdesign · Floristik · Genuss</div>
+        <h1>Dein Moment.<br><em>Dein NAYAH.</em></h1>
+        <p>Stilvolle Eventdekoration, florale Details und besondere Genussmomente – von der eleganten Tischdekoration bis zur inszenierten Mocktail-Bar.</p>
+        <div class="hero-actions"><a class="btn primary" href="#konfigurator">Angebot konfigurieren</a><a class="btn ghost" href="#event">Leistungen entdecken</a></div>
+      </div>
+      <div class="hero-photo"><img src="assets/table-deco.png" alt="Elegante Tischdekoration mit Blumen und Kerzen"><div class="hero-label">NAYAH-EVENT · Elegant & individuell</div></div>
+    </div>
+  </section>
+
+  <section id="event">
+    <div class="container">
+      <div class="section-head"><div><div class="eyebrow">01 · NAYAH-EVENT</div><h2>Eventdekoration,<br>die in Erinnerung bleibt.</h2></div><p>Dein Hauptbereich für Hochzeiten, Geburtstage, Verlobungen, Business-Events und besondere Anlässe. Unsere Pakete sind anpassbar und lassen sich passend zu deinem Konzept kombinieren.</p></div>
+      <div class="services">
+        <article class="service"><img src="assets/table-deco.png" alt="Tischdekoration"><div class="service-body"><h3>Tischdekoration</h3><p>Florale Mittelstücke, Kerzen, Servietten, Glas- & Tafelsetting und liebevolle Details.</p></div></article>
+        <article class="service"><img src="assets/stage-deco.png" alt="Bühnenbild"><div class="service-body"><h3>Bühnenbilder</h3><p>Backdrop, Drapierung, florale Akzente und ein stimmiger Mittelpunkt für deinen Raum.</p></div></article>
+        <article class="service"><img src="assets/mocktail-bar.jpg" alt="Mocktail-Bar"><div class="service-body"><h3>Mocktail-Bar</h3><p>Stylische Getränkestation mit dekorativen Gläsern, Früchten und alkoholfreien Kreationen.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="floristik">
+    <div class="container">
+      <div class="section-head"><div><div class="eyebrow">02 · NAYAH-FLORISTIK</div><h2>Blumen für<br>deinen Anlass.</h2></div><p>Blumensträuße, Brautsträuße und florale Dekorationen zum Bestellen. Die Auswahl kann je nach Saison, Farbkonzept und gewünschtem Stil angepasst werden.</p></div>
+      <div class="shop">
+        <article class="product"><img src="assets/table-deco.png" alt="Florale Tischdekoration"><div class="product-body"><h3>Florale Tischdeko</h3><p>Arrangements passend zu Farbwelt, Anlass und Tischkonzept.</p><div class="price">Auf Anfrage</div><button class="btn primary add" data-name="Florale Tischdeko">Auswählen</button></div></article>
+        <article class="product"><img src="assets/stage-deco.png" alt="Florale Eventdekoration"><div class="product-body"><h3>Brautstrauß</h3><p>Handgebundener Brautstrauß mit frei wählbaren Echtblumen und Stilrichtung.</p><div class="price">Auf Anfrage</div><button class="btn primary add" data-name="Brautstrauß">Auswählen</button></div></article>
+        <article class="product"><img src="assets/mocktail-bar.jpg" alt="Blumenarrangement"><div class="product-body"><h3>Blumenstrauß</h3><p>Eleganter Strauß für Zuhause, Geschenk oder Empfang – saisonal zusammengestellt.</p><div class="price">Auf Anfrage</div><button class="btn primary add" data-name="Blumenstrauß">Auswählen</button></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="konfigurator" class="config">
+    <div class="container">
+      <div class="section-head"><div><div class="eyebrow">03 · KONFIGURATOR</div><h2>Dein Event.<br>Schritt für Schritt.</h2></div><p>Stelle dir einen Überblick aus Leistungen und Stilrichtungen zusammen. Das Ergebnis kannst du anschließend als unverbindliche Anfrage per E-Mail senden.</p></div>
+      <div class="config-wrap">
+        <div class="panel steps">
+          <div class="step"><div class="step-title">1 · Anlass</div><div class="options">
+            <div class="option"><input type="radio" name="event" id="wedding" value="Hochzeit" checked><label for="wedding">Hochzeit</label></div>
+            <div class="option"><input type="radio" name="event" id="birthday" value="Geburtstag"><label for="birthday">Geburtstag</label></div>
+            <div class="option"><input type="radio" name="event" id="engagement" value="Verlobung"><label for="engagement">Verlobung</label></div>
+            <div class="option"><input type="radio" name="event" id="business" value="Business Event"><label for="business">Business Event</label></div>
+          </div></div>
+          <div class="step"><div class="step-title">2 · Leistungen</div><div class="options">
+            <div class="option"><input type="checkbox" id="table" value="Tischdekoration"><label for="table">Tischdekoration</label></div>
+            <div class="option"><input type="checkbox" id="stage" value="Bühnenbild"><label for="stage">Bühnenbild</label></div>
+            <div class="option"><input type="checkbox" id="mocktail" value="Mocktail-Bar"><label for="mocktail">Mocktail-Bar</label></div>
+            <div class="option"><input type="checkbox" id="floral" value="Florale Dekoration"><label for="floral">Florale Dekoration</label></div>
+          </div></div>
+          <div class="step"><div class="step-title">3 · Stil</div><div class="options">
+            <div class="option"><input type="radio" name="style" id="elegant" value="Elegant & klassisch" checked><label for="elegant">Elegant</label></div>
+            <div class="option"><input type="radio" name="style" id="romantic" value="Romantisch"><label for="romantic">Romantisch</label></div>
+            <div class="option"><input type="radio" name="style" id="modern" value="Modern & clean"><label for="modern">Modern</label></div>
+            <div class="option"><input type="radio" name="style" id="natural" value="Natural & organic"><label for="natural">Natural</label></div>
+          </div></div>
+          <div class="step"><div class="step-title">4 · Floristik</div><div class="options">
+            <div class="option"><input type="radio" name="flowers" id="white" value="Weiß / Creme"><label for="white">Weiß / Creme</label></div>
+            <div class="option"><input type="radio" name="flowers" id="blush" value="Blush / Rosé" checked><label for="blush">Blush / Rosé</label></div>
+            <div class="option"><input type="radio" name="flowers" id="pastel" value="Pastell Mix"><label for="pastel">Pastell Mix</label></div>
+            <div class="option"><input type="radio" name="flowers" id="custom" value="Weitere Farbwelt"><label for="custom">Weitere Farbwelt</label></div>
+          </div></div>
+        </div>
+        <aside class="panel summary"><div class="step-title">Deine Auswahl</div><h3>NAYAH-Konzept</h3><div id="summaryList" class="summary-list"></div><p class="note">Preise und konkrete Paketinhalte werden nach deiner Anfrage individuell abgestimmt.</p><a id="mailBtn" class="btn primary" href="#">Anfrage per E-Mail</a></aside>
+      </div>
+    </div>
+  </section>
+
+  <section id="instagram">
+    <div class="container instagram">
+      <div class="ig-card"><div class="eyebrow" style="color:#d9b968">04 · INSTAGRAM</div><h2>NAYAH auf Instagram.</h2><p>Inspiration, echte Setups, Blumen, Dekorationen und Einblicke hinter die Kulissen.</p><div class="ig-handle">@nayah.event</div><div style="margin-top:22px"><a class="btn" style="background:var(--gold);color:var(--ink);border-color:var(--gold)" href="https://www.instagram.com/nayah.event/" target="_blank" rel="noopener">Instagram öffnen ↗</a></div></div>
+      <div class="ig-image"><img src="assets/stage-deco.png" alt="Elegantes Bühnenbild mit floraler Dekoration"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="brand-card" style="text-align:center;padding:48px;border-top:3px solid var(--gold)">
+        <div class="eyebrow">NAYAH-EVENT.de</div><h2 style="font-size:62px">Bereit für dein Konzept?</h2><p style="margin:0 auto 24px;max-width:680px">Wähle im Konfigurator deine Wünsche aus und sende uns deine Anfrage. Pakete sind anpassbar und können aufeinander abgestimmt werden.</p><a class="btn primary" href="#konfigurator">Jetzt konfigurieren</a>
+      </div>
+    </div>
+  </section>
 </main>
-<footer>Nayah Event · Impressum und Datenschutz folgen</footer>
+
+<footer><div class="container footer-inner"><div>© 2026 NAYAH-EVENT · NAYAH-Floristik</div><div><a href="https://www.instagram.com/nayah.event/" target="_blank" rel="noopener">Instagram @nayah.event</a> · <a href="mailto:nayah.kontakt@gmail.com">nayah.kontakt@gmail.com</a></div></div></footer>
+<div class="toast" id="toast">Auswahl übernommen.</div>
+
+<script>
+  const get = s => document.querySelector(s);
+  const all = s => [...document.querySelectorAll(s)];
+  const summary = get('#summaryList'); const mailBtn = get('#mailBtn'); const toast = get('#toast');
+  function valueOf(name){ return document.querySelector(`input[name="${name}"]:checked`)?.value || '—'; }
+  function selections(){ return all('#konfigurator input[type="checkbox"]:checked').map(x=>x.value); }
+  function render(){
+    const data = [
+      ['Anlass', valueOf('event')],
+      ['Leistungen', selections().length ? selections().join(', ') : 'Noch nichts gewählt'],
+      ['Stil', valueOf('style')],
+      ['Floristik', valueOf('flowers')]
+    ];
+    summary.innerHTML = data.map(([a,b])=>`<div class="summary-row"><span>${a}</span><strong>${b}</strong></div>`).join('');
+    const body = encodeURIComponent(`Hallo NAYAH-EVENT,%0A%0Aich interessiere mich für folgende Konfiguration:%0A%0AAnlass: ${valueOf('event')}%0ALeistungen: ${selections().join(', ') || 'Noch offen'}%0AStil: ${valueOf('style')}%0AFloristik: ${valueOf('flowers')}%0A%0ABitte sendet mir weitere Informationen zu den passenden Paketen.`);
+    mailBtn.href = `mailto:nayah.kontakt@gmail.com?subject=NAYAH Anfrage – Eventkonfiguration&body=${body}`;
+  }
+  all('#konfigurator input').forEach(x=>x.addEventListener('change', render)); render();
+  all('.add').forEach(btn=>btn.addEventListener('click',()=>{ const id={ 'Tischdekoration':'table','Brautstrauß':'floral','Blumenstrauß':'floral'}[btn.dataset.name]; if(id){get('#'+id).checked=true; render();} document.querySelector('#konfigurator').scrollIntoView({behavior:'smooth'}); toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),1800); }));
+</script>
 </body>
 </html>
