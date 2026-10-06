@@ -52,6 +52,11 @@
     .option label{display:block;padding:11px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;cursor:pointer;background:#fff}
     .option input:checked+label{background:var(--ink);color:#fff;border-color:var(--ink)}
     .option input:focus-visible+label{outline:2px solid var(--rose-dark);outline-offset:2px}
+    .option input:disabled+label{opacity:.4;cursor:not-allowed}
+    .fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}
+    .field input{width:100%;min-width:0;padding:10px 14px;border:1px solid var(--line);border-radius:14px;font:inherit;font-size:16px;color:var(--ink);background:#fff;-webkit-appearance:none;appearance:none}
+    .field input:focus-visible{outline:2px solid var(--rose-dark);outline-offset:2px}
+    .pkg-hint{margin:12px 0 0;color:var(--rose-dark)}
     .summary{position:sticky;top:98px}.summary-list{display:grid;gap:10px;margin:18px 0 22px}.summary-row{display:flex;justify-content:space-between;gap:16px;font-size:14px;padding-bottom:10px;border-bottom:1px dashed var(--line)}.summary-row span:first-child{color:var(--muted)}.summary-row strong{text-align:right}
     .note{font-size:12px;color:var(--muted)}
     .shop{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}.product{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column}.product img{aspect-ratio:4/5;width:100%;object-fit:cover}.product-body{padding:20px;display:flex;flex-direction:column;flex:1}.product h3{font-size:30px;margin-bottom:6px}.product p{color:var(--muted);font-size:14px;margin:0 0 16px}.product .price{font-weight:800;margin-bottom:14px;margin-top:auto}
@@ -79,7 +84,7 @@
       .navlinks{display:none}.container{width:calc(100% - 28px)}section{padding:54px 0}.services{grid-template-columns:1fr}.hero{padding:28px 0 20px}.hero-photo{border-radius:24px}.hero-photo img{height:340px}
       .nav{min-height:64px}.brand{font-size:26px}.nav-cta{padding:9px 14px}.hero p{font-size:16px}.hero-actions .btn{flex:1 1 100%}
       .panel{padding:20px}.brand-card{padding:24px}.cta-card{padding:32px 20px}.ig-card{padding:26px}.ig-image img{min-height:260px}
-      .option label{padding:12px 14px}.footer-inner{flex-direction:column}
+      .option label{padding:12px 14px}.footer-inner{flex-direction:column}.fields{grid-template-columns:1fr}
       .wa-float{padding:15px}.wa-float span{display:none}.wa-float svg{width:28px;height:28px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.toast{transition:none}}
@@ -161,19 +166,25 @@
             <div class="option"><input type="radio" name="event" id="engagement" value="Verlobung"><label for="engagement">Verlobung</label></div>
             <div class="option"><input type="radio" name="event" id="business" value="Business Event"><label for="business">Business Event</label></div>
           </div></div>
-          <div class="step"><div class="step-title">2 · Paket (optional)</div><div class="options">
+          <div class="step"><div class="step-title">2 · Eventdetails</div><div class="fields">
+            <div class="field"><label for="guests">Personenanzahl</label><input type="number" id="guests" min="1" step="1" value="80" inputmode="numeric"></div>
+            <div class="field"><label for="tables">Tischanzahl</label><input type="number" id="tables" min="1" step="1" placeholder="z. B. 10" inputmode="numeric"></div>
+            <div class="field"><label for="date">Datum</label><input type="date" id="date"></div>
+            <div class="field"><label for="location">Location / PLZ</label><input type="text" id="location" placeholder="z. B. Festsaal, 60311" autocomplete="postal-code"></div>
+          </div></div>
+          <div class="step"><div class="step-title">3 · Paket (optional, für 80 Personen)</div><div class="options">
             <div class="option"><input type="radio" name="pkg" id="pkg-none" value="Individuell (ohne Paket)" checked><label for="pkg-none">Individuell</label></div>
             <div class="option"><input type="radio" name="pkg" id="pkg-basis" value="Basis Paket (80 Pers., 1.970 €)"><label for="pkg-basis">Basis · 1.970 €</label></div>
             <div class="option"><input type="radio" name="pkg" id="pkg-premium" value="Premium Paket (80 Pers., 2.399 €)"><label for="pkg-premium">Premium · 2.399 €</label></div>
             <div class="option"><input type="radio" name="pkg" id="pkg-deluxe" value="Deluxe Flower Paket (80 Pers., 2.979 €)"><label for="pkg-deluxe">Deluxe Flower · 2.979 €</label></div>
-          </div></div>
-          <div class="step"><div class="step-title">3 · Leistungen</div><div class="options">
+          </div><p class="note pkg-hint" id="pkgHint" hidden>Unsere Pakete gelten für 80 Personen. Bei einer anderen Personenanzahl schauen wir uns deine Anfrage individuell an.</p></div>
+          <div class="step"><div class="step-title">4 · Leistungen</div><div class="options">
             <div class="option"><input type="checkbox" id="table" value="Tischdekoration"><label for="table">Tischdekoration</label></div>
             <div class="option"><input type="checkbox" id="stage" value="Bühnenbild"><label for="stage">Bühnenbild</label></div>
             <div class="option"><input type="checkbox" id="mocktail" value="Mocktail-Bar"><label for="mocktail">Mocktail-Bar</label></div>
             <div class="option"><input type="checkbox" id="floral" value="Florale Dekoration"><label for="floral">Florale Dekoration</label></div>
           </div></div>
-          <div class="step"><div class="step-title">4 · Farbschema</div><div class="options">
+          <div class="step"><div class="step-title">5 · Farbschema</div><div class="options">
             <div class="option"><input type="radio" name="colors" id="white" value="Weiß, Creme" checked><label for="white">Weiß, Creme</label></div>
             <div class="option"><input type="radio" name="colors" id="redpastel" value="Rot, Pastel-Mix"><label for="redpastel">Rot, Pastel-Mix</label></div>
             <div class="option"><input type="radio" name="colors" id="custom" value="Weitere Farbwelt"><label for="custom">Weitere Farbwelt</label></div>
@@ -226,11 +237,35 @@
     'pkg-deluxe':  ['stage','table','mocktail','floral']
   };
 
+  /* Eventdetails – Pakete gelten nur für 80 Personen */
+  const PKG_GUESTS = 80;
+  const guests = get('#guests'), tables = get('#tables'), date = get('#date'), loc = get('#location'), pkgHint = get('#pkgHint');
+  const fmtDate = v => v ? new Date(v + 'T00:00').toLocaleDateString('de-DE', {day:'2-digit', month:'2-digit', year:'numeric'}) : '';
+  const guestCount = () => parseInt(guests.value, 10) || 0;
+  const isStandard = () => guestCount() === PKG_GUESTS;
+  date.min = new Date().toISOString().slice(0, 10);
+
+  function applyGuests(){
+    const std = isStandard();
+    all('input[name="pkg"]').forEach(r => { if (r.id !== 'pkg-none') r.disabled = !std; });
+    if (!std) get('#pkg-none').checked = true;
+    pkgHint.hidden = std;
+  }
+
   let message = '';
   function render(){
     const list = services();
+    const n = guestCount();
+    const guestText = n ? `${n} Personen${isStandard() ? '' : ' (individuell)'}` : 'Noch offen';
+    const details = [
+      ['Personen', guestText],
+      ['Tische', tables.value.trim() || 'Noch offen'],
+      ['Datum', fmtDate(date.value) || 'Noch offen'],
+      ['Location / PLZ', loc.value.trim() || 'Noch offen']
+    ];
     const data = [
       ['Anlass', valueOf('event')],
+      ...details,
       ['Paket', valueOf('pkg')],
       ['Leistungen', list.length ? list.join(', ') : 'Noch nichts gewählt'],
       ['Farbschema', valueOf('colors')]
@@ -240,6 +275,7 @@
       'Hallo NAYAH-EVENT,', '',
       'ich interessiere mich für folgende Konfiguration:', '',
       `*Anlass:* ${valueOf('event')}`,
+      ...details.map(([a,b]) => `*${a}:* ${b}`),
       `*Paket:* ${valueOf('pkg')}`,
       `*Leistungen:* ${list.join(', ') || 'Noch offen'}`,
       `*Farbschema:* ${valueOf('colors')}`, '',
@@ -249,11 +285,14 @@
   }
 
   all('#konfigurator input').forEach(x => x.addEventListener('change', render));
+  [tables, date, loc].forEach(x => x.addEventListener('input', render));
+  guests.addEventListener('change', () => { applyGuests(); render(); });
   all('input[name="pkg"]').forEach(r => r.addEventListener('change', () => {
     const ids = PKG[r.id];
     if (ids) all('#konfigurator input[type="checkbox"]').forEach(c => c.checked = ids.includes(c.id));
     render();
   }));
+  applyGuests();
   render();
 
   /* Zur Sicherheit: Nachricht in die Zwischenablage, falls WhatsApp den Text nicht vorausfüllt */
@@ -269,9 +308,11 @@
     showToast(`${btn.dataset.name} zur Auswahl hinzugefügt.`);
   }));
   all('.pick').forEach(btn => btn.addEventListener('click', () => {
+    const reset = !isStandard();
+    if (reset) { guests.value = PKG_GUESTS; applyGuests(); }
     const r = get('#' + btn.dataset.pkg); r.checked = true; r.dispatchEvent(new Event('change', {bubbles:true}));
     get('#konfigurator').scrollIntoView({behavior:'smooth'});
-    showToast('Paket zur Auswahl hinzugefügt.');
+    showToast(reset ? 'Paket gewählt – Personenanzahl auf 80 gesetzt.' : 'Paket zur Auswahl hinzugefügt.');
   }));
 </script>
 </body>
